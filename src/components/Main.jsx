@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Navbar, Content } from "./";
+import { Navbar, Content, Detail } from "./";
 
 const Main = () => {
     const [puppies, setPuppies] = useState([]);
+    const [selectedPuppy, setSelectedPuppy] = useState({});
 
     const getPuppies = async () => {
         try {
@@ -24,7 +25,9 @@ const Main = () => {
     return(
         <div id="main">
             <Navbar />
-            <Content puppies={puppies}/>
+            {selectedPuppy.id ?
+            <Detail selectedPuppy={selectedPuppy} setSelectedPuppy={setSelectedPuppy} /> :
+            <Content puppies={puppies} setSelectedPuppy={setSelectedPuppy}/>}
         </div>
     )
 }
