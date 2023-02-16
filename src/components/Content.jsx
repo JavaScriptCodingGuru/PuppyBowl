@@ -1,8 +1,20 @@
 import React from "react";
 
 const Content = (props) => {
-  const puppies = props.puppies;
+  let puppies = props.puppies;
   const setSelectedPuppy = props.setSelectedPuppy;
+  const toShow = props.toShow;
+
+  if(toShow)
+  {
+    let holder = [];
+    for(let i = 0; i < puppies.length; i++)
+    {
+      if(toShow[i] === puppies.id) holder.push(puppies[i]);
+    }
+    puppies = holder;
+  } 
+
 
   return (
     <div className="puppy-list">

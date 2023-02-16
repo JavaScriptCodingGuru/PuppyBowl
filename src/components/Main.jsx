@@ -4,6 +4,34 @@ import { Navbar, Content, Detail } from "./";
 const Main = () => {
     const [puppies, setPuppies] = useState([]);
     const [selectedPuppy, setSelectedPuppy] = useState({});
+    const [dogName, setName] = useState("");
+    const [breed, setBreed] = useState("");
+
+    
+
+    const search =  (Name, Breed)=>
+    {
+        const name = Name;
+        const breed = Breed;
+        const matches = [];
+        if(name === "" && breed === "")
+        {
+            getPuppies();
+        } 
+        else
+        {
+            for(let i = 0; i < puppies.length; i++)
+            {
+            
+                if(puppies[i].name.slice(0, name.length) === name)
+                {
+                    console.log("here")
+                    matches.push(puppies[i]);
+                }
+            }
+            setPuppies(matches)
+        }
+    }
 
     const getPuppies = async () => {
         try {
@@ -24,7 +52,7 @@ const Main = () => {
 
     return(
         <div id="main">
-            <Navbar />
+            <Navbar handleSearch={search}/>
             {selectedPuppy.id ?
             <Detail selectedPuppy={selectedPuppy} setSelectedPuppy={setSelectedPuppy} /> :
             <Content puppies={puppies} setSelectedPuppy={setSelectedPuppy}/>}
