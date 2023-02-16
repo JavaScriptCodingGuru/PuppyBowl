@@ -24,7 +24,7 @@ const Main = () => {
     return(
         <div id="main">
             <Navbar />
-            <Content />
+            <Content puppies={puppies}/>
         </div>
     )
 }
