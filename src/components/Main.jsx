@@ -16,12 +16,24 @@ const Main = () => {
         {
             getPuppies();
         } 
-        else
+        else if(name != "" && breed ==="")
+        {
+
+            for(let i = 0; i < puppies.length; i++)
+            {
+                if(puppies[i].name.slice(0, name.length) === name)
+                {
+                    console.log("here")
+                    matches.push(puppies[i]);
+                }
+            }
+            setPuppies(matches)
+        }
+        else if(breed!= "" && name === "")
         {
             for(let i = 0; i < puppies.length; i++)
             {
-            
-                if(puppies[i].name.slice(0, name.length) === name)
+                if(puppies[i].breed.slice(0, breed.length) === breed)
                 {
                     console.log("here")
                     matches.push(puppies[i]);
