@@ -21,7 +21,7 @@ const Main = () => {
 
             for(let i = 0; i < puppies.length; i++)
             {
-                if(puppies[i].name.slice(0, name.length) === name)
+                if(puppies[i].name.slice(0, name.length).toLowerCase() === name.toLowerCase())
                 {
                     console.log("here")
                     matches.push(puppies[i]);
@@ -33,7 +33,7 @@ const Main = () => {
         {
             for(let i = 0; i < puppies.length; i++)
             {
-                if(puppies[i].breed.slice(0, breed.length) === breed)
+                if(puppies[i].breed.slice(0, breed.length).toLowerCase() === breed.toLowerCase())
                 {
                     console.log("here")
                     matches.push(puppies[i]);
