@@ -54,11 +54,17 @@ body {
 }
 
 
+.puppy-box a {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
 
 .puppy-box img {
     padding: 15px;
     border-radius: 10%;
-    max-width: 100%;
+    max-width: 75%;
 }
 
 #puppy-detail {

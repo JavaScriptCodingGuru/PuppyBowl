@@ -29,8 +29,8 @@ const Content = (props) => {
               <h2>{puppy.name}</h2>
               <h3>#{puppy.id}</h3>
             </div>
-            <Link to={`detail/${puppy.id}`}><img src={puppy.imageUrl} /></Link>
-            <button>See Details</button>
+            <img src={puppy.imageUrl} />
+            <Link to={`detail/${puppy.id}`}><button>See Details</button></Link>
           </div>
         );
       })}
