@@ -53,9 +53,12 @@ body {
     margin: 0px;
 }
 
+
+
 .puppy-box img {
     padding: 15px;
     border-radius: 10%;
+    max-width: 100%;
 }
 
 #puppy-detail {
