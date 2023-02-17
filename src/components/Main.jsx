@@ -4,8 +4,6 @@ import { Navbar, Content, Detail } from "./";
 const Main = () => {
     const [puppies, setPuppies] = useState([]);
     const [selectedPuppy, setSelectedPuppy] = useState({});
-    const [dogName, setName] = useState("");
-    const [breed, setBreed] = useState("");
 
     
 
