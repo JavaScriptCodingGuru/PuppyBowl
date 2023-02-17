@@ -31,7 +31,6 @@ const Content = (props) => {
             </div>
             <Link to={`detail/${puppy.id}`}><img src={puppy.imageUrl} /></Link>
             <button>See Details</button>
-            <button>Delete from Roster</button>
           </div>
         );
       })}
