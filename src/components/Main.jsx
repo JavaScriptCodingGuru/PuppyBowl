@@ -63,9 +63,7 @@ const Main = () => {
     return(
         <div id="main">
             <Navbar handleSearch={search}/>
-            {selectedPuppy.id ?
-            <Detail selectedPuppy={selectedPuppy} setSelectedPuppy={setSelectedPuppy} /> :
-            <Content puppies={puppies} setSelectedPuppy={setSelectedPuppy}/>}
+            <Content puppies={puppies} setSelectedPuppy={setSelectedPuppy}/>
         </div>
     )
 }

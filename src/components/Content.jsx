@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 const Content = (props) => {
   let puppies = props.puppies;
@@ -28,7 +29,7 @@ const Content = (props) => {
               <h2>{puppy.name}</h2>
               <h3>#{puppy.id}</h3>
             </div>
-            <img src={puppy.imageUrl} />
+            <Link to={`/detail/${puppy.id}`}><img src={puppy.imageUrl} /></Link>
             <button>See Details</button>
             <button>Delete from Roster</button>
           </div>
