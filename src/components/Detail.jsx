@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 const Detail = (props) => {
   const [puppy, setPuppy] = useState({});
@@ -36,7 +36,7 @@ useEffect(() => {
       <h2>ID: {puppy.id}</h2>
       <h2>Breed: {puppy.breed}</h2>
       <img src={puppy.imageUrl} />
-      <button>Exit</button>
+      <Link to={`/`}><button>Exit</button></Link>
     </div> :
     null
   )
