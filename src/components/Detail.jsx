@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import { useParams } from 'react-router-dom';
 
 const Detail = (props) => {
   const [puppy, setPuppy] = useState({});
@@ -11,8 +12,9 @@ const Detail = (props) => {
         const data = await response.json();
 
         console.log(data.data.players)
+        console.log(`${id}`)
         const puppy = data.data.players.find((puppy) => {
-          return puppy.id === id;
+          return `${puppy.id}` === `${id}`;
         })
         console.log(puppy)
 
@@ -28,15 +30,15 @@ useEffect(() => {
 []);
 
   return (
+    puppy.id ?
     <div id="puppy-detail">
-      <h1>{selectedPuppy.name}</h1>
-      <h2>ID: {selectedPuppy.id}</h2>
-      <h2>Breed: {selectedPuppy.breed}</h2>
-      <img src={selectedPuppy.imageUrl} />
-      <button onClick={() => {
-        setSelectedPuppy({})
-      }}>Exit</button>
-    </div>
+      <h1>{puppy.name}</h1>
+      <h2>ID: {puppy.id}</h2>
+      <h2>Breed: {puppy.breed}</h2>
+      <img src={puppy.imageUrl} />
+      <button>Exit</button>
+    </div> :
+    null
   )
 }
 
